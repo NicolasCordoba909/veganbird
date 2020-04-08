@@ -1,11 +1,11 @@
-package juego;
+package com.nico.game;
 
 public class Bala {
 	private double x;
 	private double y;
 	private int ancho;
 	private int alto;
-	
+
 	Bala ()
 	{
 		this.x = 100;
@@ -29,5 +29,5 @@ public class Bala {
 	public void setY(double y) {
 		this.y = y;
 	}
-	
+
 }

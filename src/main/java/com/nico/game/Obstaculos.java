@@ -1,8 +1,6 @@
-package juego;
+package com.nico.game;
 
 import entorno.Entorno;
-import entorno.InterfaceJuego;
-import entorno.Herramientas;
 
 import java.awt.Color;
 import java.awt.image.*;
@@ -22,7 +20,7 @@ public class Obstaculos {
 	}
 
 	void dibujarObstaculo(Entorno entorno) {
-		
+
 		entorno.dibujarRectangulo(this.x, this.y, this.ancho, this.alto, 0, Color.GREEN);
 	}
 	void moverObstaculo ()

@@ -1,4 +1,5 @@
-package juego;
+package com.nico.game;
+
 
 import entorno.Entorno;
 import entorno.InterfaceJuego;
@@ -29,17 +30,17 @@ public class Juego extends InterfaceJuego {
 		this.obstaculo[2] = new Obstaculos(560, 0, 70, 400);
 		this.obstaculo[3] = new Obstaculos(430, 599, 70, 400);
 		this.obstaculo[4] = new Obstaculos(360, 0, 70, 400);
-		
+
 		this.hamburguesas = new Hamburguesas [2];
 		this.hamburguesas[0] = new Hamburguesas(200, 400);
 		this.hamburguesas[1] = new Hamburguesas(100, 400);
-		
+
 		this.vegetal = new Vegetal [2];
 		this.vegetal[0] = new Vegetal(240, 400);
 		this.vegetal[1] = new Vegetal(140, 400);
-		
-		
-		
+
+
+
 		// Inicia el juego!
 		this.entorno.iniciar();
 	}
@@ -53,7 +54,7 @@ public class Juego extends InterfaceJuego {
 	public void tick() {
 		// Procesamiento de un instante de tiempo
 		// ...
-		
+
 		this.Personaje.dibujarFlappy(entorno);
 		this.Personaje.caer();
 
@@ -74,7 +75,7 @@ public class Juego extends InterfaceJuego {
 				this.Personaje.restaPuntos();
 			}
 		}
-		
+
 		for (int i = 0; i< this.vegetal.length; i++) {
 			this.vegetal[i].dibujarVegetal(entorno);
 			this.vegetal[i].moverVegetal();
@@ -82,7 +83,7 @@ public class Juego extends InterfaceJuego {
 				this.Personaje.sumaPuntos();
 			}
 		}
-		
+
 	}
 
 	@SuppressWarnings("unused")

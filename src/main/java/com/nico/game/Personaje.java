@@ -1,14 +1,8 @@
-package juego;
-
-import java.awt.Color;
-import java.awt.Image;
+package com.nico.game;
 
 import entorno.Entorno;
 
-import java.awt.image.*;
-import entorno.Herramientas;
-import java.awt.image.*;
-import entorno.Herramientas;
+import java.awt.Color;
 
 public class Personaje {
 	private double x;
@@ -37,47 +31,47 @@ public class Personaje {
 
 	public boolean chocaConObstaculosArriba(Obstaculos obstaculo)
 	{
-		if ( this.y <= obstaculo.getY() + obstaculo.getAlto()/2 && 
-				this.y >= obstaculo.getY() - obstaculo.getAlto() /2 
+		if ( this.y <= obstaculo.getY() + obstaculo.getAlto()/2 &&
+				this.y >= obstaculo.getY() - obstaculo.getAlto() /2
 				&& this.x <= obstaculo.getX() + obstaculo.getAncho()/2 && this.x >= obstaculo.getX() - obstaculo.getAncho()/2)
 		{
 			return true;
 		}
 		return false;
 	}
-	
+
 	public boolean comeHamburguesas(Hamburguesas hamburguesas)
 	{
-		if ( this.y <= hamburguesas.getY() + hamburguesas.getAlto()/2 && 
-				this.y >= hamburguesas.getY() - hamburguesas.getAlto() /2 
+		if ( this.y <= hamburguesas.getY() + hamburguesas.getAlto()/2 &&
+				this.y >= hamburguesas.getY() - hamburguesas.getAlto() /2
 				&& this.x <= hamburguesas.getX() + hamburguesas.getAncho()/2 && this.x >= hamburguesas.getX() - hamburguesas.getAncho()/2)
 		{
 			return true;
 		}
 		return false;
 	}
-	
+
 	public boolean comeVegetal(Vegetal vegetal)
 	{
-		if ( this.y <= vegetal.getY() + vegetal.getAlto()/2 && 
-				this.y >= vegetal.getY() - vegetal.getAlto() /2 
+		if ( this.y <= vegetal.getY() + vegetal.getAlto()/2 &&
+				this.y >= vegetal.getY() - vegetal.getAlto() /2
 				&& this.x <= vegetal.getX() + vegetal.getAncho()/2 && this.x >= vegetal.getX() - vegetal.getAncho()/2)
 		{
 			return true;
 		}
 		return false;
 	}
-	
+
 	void pierdeJuego (){
 		this.alto = 0;
 		this.ancho = 0;
 	}
-	
+
 	void restaPuntos (){
 	}
-	
+
 	void sumaPuntos () {
-		
+
 	}
 
 	public double getX() {

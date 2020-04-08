@@ -1,32 +1,32 @@
-package juego;
-import java.awt.Color;
-import java.util.Random;
-
+package com.nico.game;
 import entorno.Entorno;
-public class Vegetal {
+
+import java.awt.Color;
+
+public class Hamburguesas {
 	private double x;
 	private double y;
 	private int ancho;
 	private int alto;
-	
-	Vegetal (double x, double y)
+
+	Hamburguesas (double x, double y)
 	{
 		this.alto = 10;
 		this.ancho = 10;
 		this.x = x;
 		this.y = y;
-	
+
 	}
-	
-    void dibujarVegetal(Entorno entorno) {
-		
-		entorno.dibujarRectangulo(this.x, this.y, this.ancho, this.alto, 0, Color.YELLOW);
+
+    void dibujarHamburguesas(Entorno entorno) {
+
+		entorno.dibujarRectangulo(this.x, this.y, this.ancho, this.alto, 0, Color.RED);
 	}
-    void moverVegetal ()
+    void moverHamburguesas ()
 	{
 		this.x--;
 	}
-    
+
 
 
 	public double getX() {
@@ -60,5 +60,5 @@ public class Vegetal {
 	public void setY(double y) {
 		this.y = y;
 	}
-	
+
 }
