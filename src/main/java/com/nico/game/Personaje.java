@@ -1,79 +1,57 @@
 package com.nico.game;
 
+import java.awt.Color;
+import java.awt.Image;
+
 import entorno.Entorno;
 
-import java.awt.Color;
+import java.awt.image.*;
+import entorno.Herramientas;
+import java.awt.image.*;
+import entorno.Herramientas;
 
 public class Personaje {
 	private double x;
 	private double y;
 	private double ancho;
 	private double alto;
-
+	private int velocidad;
+	Image Dragon2;
+	
 	Personaje() {
 		this.x = 100;
 		this.y = 300;
-		this.alto = 15;
-		this.ancho = 15;
+		this.alto = 50;
+		this.ancho = 55;
+		this.velocidad =10;
+		this.Dragon2 = entorno.Herramientas.cargarImagen("Dragon2.gif");
+		
+		
 	}
-
+	//METODO PARA DIBUJAR AL PERSONAJE
 	void dibujarFlappy(Entorno entorno) {
-		entorno.dibujarRectangulo(x, y, ancho, alto, 0, Color.cyan);
+		entorno.dibujarImagen(Dragon2,this.x, this.y, 0, 0.30);
 	}
-
+	// METODO QUE SIRVE PARA QUE EL PERSONAJE SUBA
 	void moverFlappy() {
-		this.y -= 10;
+		this.y -= this.velocidad;
 	}
-
+	// METODO PARA QUE EL PERSONAJE SIEMPRE ESTE CAYENDO
 	void caer() {
 		this.y += 2;
 	}
-
-	public boolean chocaConObstaculosArriba(Obstaculos obstaculo)
+	// METODO QUE DEVUELVE UNA BALA
+	public Bala disparar()
+	{	
+		return new Bala(this.x, this.y);
+	
+	}
+	// METODO QUE DEVUELVE LOS PARAMETROS DEL PERSONAJE (X, Y , ALTO Y ANCHO) SE UTILIZA EN UN METODO PARA LAS COLISIONES
+	public Parametros parametro()
 	{
-		if ( this.y <= obstaculo.getY() + obstaculo.getAlto()/2 &&
-				this.y >= obstaculo.getY() - obstaculo.getAlto() /2
-				&& this.x <= obstaculo.getX() + obstaculo.getAncho()/2 && this.x >= obstaculo.getX() - obstaculo.getAncho()/2)
-		{
-			return true;
-		}
-		return false;
+		return new Parametros (this.x,this.y, this.ancho,this.alto);
 	}
-
-	public boolean comeHamburguesas(Hamburguesas hamburguesas)
-	{
-		if ( this.y <= hamburguesas.getY() + hamburguesas.getAlto()/2 &&
-				this.y >= hamburguesas.getY() - hamburguesas.getAlto() /2
-				&& this.x <= hamburguesas.getX() + hamburguesas.getAncho()/2 && this.x >= hamburguesas.getX() - hamburguesas.getAncho()/2)
-		{
-			return true;
-		}
-		return false;
-	}
-
-	public boolean comeVegetal(Vegetal vegetal)
-	{
-		if ( this.y <= vegetal.getY() + vegetal.getAlto()/2 &&
-				this.y >= vegetal.getY() - vegetal.getAlto() /2
-				&& this.x <= vegetal.getX() + vegetal.getAncho()/2 && this.x >= vegetal.getX() - vegetal.getAncho()/2)
-		{
-			return true;
-		}
-		return false;
-	}
-
-	void pierdeJuego (){
-		this.alto = 0;
-		this.ancho = 0;
-	}
-
-	void restaPuntos (){
-	}
-
-	void sumaPuntos () {
-
-	}
-
+	// 
 	public double getX() {
 		return x;
 	}
@@ -97,5 +75,5 @@ public class Personaje {
 	public void setY(double y) {
 		this.y = y;
 	}
-
+	
 }
