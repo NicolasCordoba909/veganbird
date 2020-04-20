@@ -32,6 +32,7 @@ public class mainMenu extends JFrame implements ActionListener
 	mainMenu() {
 		setTitle("Vegan Bird");
 		setBounds(273, 50, 800, 640); // limitar el ancho y alto y posicion inicial de pantalla
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true); // mostrar en pantalla boolean
 		Container contentpane = getContentPane(); // elemento que contiene en jpanel
 		musicaMenu = entorno.Herramientas.cargarSonido("musicaMenu.wav");
